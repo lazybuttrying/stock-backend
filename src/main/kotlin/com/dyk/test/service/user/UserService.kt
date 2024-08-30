@@ -2,7 +2,7 @@ package com.dyk.test.service.user
 
 
 import com.dyk.test.domain.user.User
-import com.dyk.test.repository.UserRepository
+import com.dyk.test.repository.user.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service

@@ -1,7 +1,7 @@
 package com.dyk.test.service.user
 
 import com.dyk.test.domain.user.User
-import com.dyk.test.repository.UserRepository
+import com.dyk.test.repository.user.UserRepository
 import org.junit.jupiter.api.*
 import org.junit.jupiter.api.Assertions.*
 import org.mockito.BDDMockito.given

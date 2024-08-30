@@ -1,7 +1,6 @@
 package com.dyk.test.dto
 
 
-import com.dyk.test.domain.user.Role
 import jakarta.validation.constraints.Email
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.Size

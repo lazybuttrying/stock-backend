@@ -1,4 +1,4 @@
-package com.dyk.test.repository
+package com.dyk.test.repository.user
 
 
 import com.dyk.test.domain.user.User

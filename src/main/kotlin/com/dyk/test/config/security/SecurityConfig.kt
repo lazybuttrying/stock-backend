@@ -1,7 +1,7 @@
-package com.dyk.test.security
+package com.dyk.test.config.security
 
 
-import com.dyk.test.security.jwt.JwtRequestFilter
+import com.dyk.test.config.security.jwt.JwtRequestFilter
 import com.dyk.test.service.user.CustomUserDetailsService
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -46,10 +46,14 @@ class SecurityConfig (
         http {
             csrf { disable() }
             authorizeHttpRequests {
-                authorize("/api/users/delete", permitAll)
-                authorize("/api/users/profile", permitAll)
-                authorize("/api/users/login", permitAll)
-                authorize("/api/users/register", permitAll)
+                authorize("/api/adjClose", permitAll)
+                authorize("/api/portfolio/**", permitAll)
+                authorize("/api/portfolio", permitAll)
+                authorize("/api/stock/search", permitAll)
+                authorize("/api/user/delete", permitAll)
+                authorize("/api/user/profile", permitAll)
+                authorize("/api/user/login", permitAll)
+                authorize("/api/user/register", permitAll)
                 authorize(anyRequest, authenticated)
             }
             sessionManagement {

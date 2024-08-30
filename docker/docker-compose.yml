@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  timescaledb:
+    build: ./timescaledb
+    container_name: my-timescaledb
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
+      - timescale_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+  python:
+    build: py
+    container_name: my-py
+    depends_on:
+      - timescaledb
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PORT: ${DB_PORT}
+#      KORINVEST_APIKEY: ${KORINVEST_APIKEY}
+#      KORINVEST_SECRET: ${KORINVEST_SECRET}
+    volumes:
+      - ./py/app:/app
+    ports:
+      - "3000:3000"
+
+  redis:
+    image: redis:alpine
+    container_name: my-redis
+    depends_on:
+      - timescaledb
+      - python
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+
+volumes:
+  timescale_data:
+  redis_data:

@@ -1,0 +1,12 @@
+# pycryptodome
+# websocket-client
+
+fastapi[all]
+uvicorn
+pydantic
+
+pandas
+numpy
+yfinance
+
+psycopg2-binary

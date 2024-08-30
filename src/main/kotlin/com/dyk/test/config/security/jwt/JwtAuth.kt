@@ -1,4 +1,4 @@
-package com.dyk.test.security.jwt
+package com.dyk.test.config.security.jwt
 
 import org.springframework.security.access.prepost.PreAuthorize
 

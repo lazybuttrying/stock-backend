@@ -7,8 +7,8 @@ import com.dyk.test.service.user.UserService
 
 
 import com.dyk.test.dto.UserRegistrationDto
-import com.dyk.test.security.jwt.JwtAuth
-import com.dyk.test.security.jwt.JwtUtil
+import com.dyk.test.config.security.jwt.JwtAuth
+import com.dyk.test.config.security.jwt.JwtUtil
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.validation.BindingResult
 import jakarta.validation.Valid
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 import javax.security.sasl.AuthenticationException
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/user")
 class UserController @Autowired constructor(
     private val userService: UserService,
     private val jwtUtil: JwtUtil

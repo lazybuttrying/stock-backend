@@ -1,5 +1,6 @@
 package com.dyk.test.domain.user
 
+import com.dyk.test.domain.stock.Portfolio
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
@@ -39,10 +40,14 @@ data class User (
     var nickname: String,
 
     @CreationTimestamp
-    val createdAt: LocalDateTime? = null,
+    @Column(updatable = false, nullable = false)
+    val createdAt: LocalDateTime = LocalDateTime.now(),
 
     @UpdateTimestamp
-    val updatedAt: LocalDateTime? = null,
+    var updatedAt: LocalDateTime? = null,
 
-    val deletedAt: LocalDateTime? = null
+    val deletedAt: LocalDateTime? = null,
+
+//    @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+//    val portfolios: MutableList<Portfolio> = mutableListOf(),
 )

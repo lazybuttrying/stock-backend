@@ -1,7 +1,7 @@
 package com.dyk.test.service.user
 
 
-import com.dyk.test.repository.UserRepository
+import com.dyk.test.repository.user.UserRepository
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
